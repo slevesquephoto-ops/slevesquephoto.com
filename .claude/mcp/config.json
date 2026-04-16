@@ -1,0 +1,46 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "./"],
+      "description": "Accès lecture/écriture au projet local",
+      "allowedAgents": ["orchestrator", "ui-components", "gallery-cloudinary", "content-data", "seo-performance", "qa-testing"]
+    },
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
+      },
+      "description": "Commits, branches, pull requests",
+      "allowedAgents": ["orchestrator", "deploy"]
+    },
+    "vercel": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-vercel"],
+      "env": {
+        "VERCEL_TOKEN": "${VERCEL_TOKEN}"
+      },
+      "description": "Déploiements et variables d'environnement",
+      "allowedAgents": ["orchestrator", "deploy"]
+    },
+    "cloudinary": {
+      "command": "node",
+      "args": [".claude/mcp/cloudinary-server.js"],
+      "env": {
+        "CLOUDINARY_CLOUD_NAME": "${NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}",
+        "CLOUDINARY_API_KEY": "${CLOUDINARY_API_KEY}",
+        "CLOUDINARY_API_SECRET": "${CLOUDINARY_API_SECRET}"
+      },
+      "description": "Liste assets, dossiers, URLs transformées — lecture seule",
+      "allowedAgents": ["gallery-cloudinary"]
+    }
+  },
+
+  "notes": {
+    "filesystem": "Natif Claude Code — fonctionne sans configuration supplémentaire",
+    "github": "Installer avec: npm install -g @modelcontextprotocol/server-github. Token requis: https://github.com/settings/tokens (scopes: repo, workflow)",
+    "vercel": "Token requis: https://vercel.com/account/tokens",
+    "cloudinary": "Serveur custom léger — voir cloudinary-server.ts. Opérations disponibles: list_folder, get_asset, get_url"
+  }
+}
