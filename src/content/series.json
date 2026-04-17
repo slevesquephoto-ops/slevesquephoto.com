@@ -1,0 +1,51 @@
+[
+  {
+    "slug": "mammiferes",
+    "title": "Mammifères sauvages",
+    "titleEn": "Wildlife Mammals",
+    "description": "Les grands mammifères du Québec dans leur milieu naturel — orignal, ours, loup, renard et bien d'autres, saisis dans des moments de vérité.",
+    "cloudinaryFolder": "Portfolio/mammiferes",
+    "coverImage": "Portfolio/mammiferes/Orignal",
+    "order": 1,
+    "featured": true,
+    "photoCount": 0,
+    "subFolders": [
+      { "slug": "orignal", "label": "Orignal", "folder": "Portfolio/mammiferes/Orignal" },
+      { "slug": "ours", "label": "Ours", "folder": "Portfolio/mammiferes/Ours" },
+      { "slug": "renards", "label": "Renards", "folder": "Portfolio/mammiferes/Renards" },
+      { "slug": "caribou", "label": "Caribou", "folder": "Portfolio/mammiferes/caribou" },
+      { "slug": "loup", "label": "Loup", "folder": "Portfolio/mammiferes/loup" },
+      { "slug": "martre", "label": "Martre", "folder": "Portfolio/mammiferes/martre" },
+      { "slug": "chevreuil", "label": "Chevreuil", "folder": "Portfolio/mammiferes/Chevreuil" },
+      { "slug": "hermines", "label": "Hermines", "folder": "Portfolio/mammiferes/Hermines" },
+      { "slug": "lievre", "label": "Lièvre", "folder": "Portfolio/mammiferes/Lievre" },
+      { "slug": "raton", "label": "Raton laveur", "folder": "Portfolio/mammiferes/Raton" },
+      { "slug": "rongeur", "label": "Rongeurs", "folder": "Portfolio/mammiferes/Rongeur" },
+      { "slug": "aquatiques", "label": "Aquatiques", "folder": "Portfolio/mammiferes/Aquatiques" }
+    ]
+  },
+  {
+    "slug": "oiseaux",
+    "title": "Oiseaux",
+    "titleEn": "Birds",
+    "description": "De la chouette qui veille dans la nuit à l'aigle qui domine les cimes — les oiseaux du Québec dans toute leur diversité.",
+    "cloudinaryFolder": "Portfolio/oiseaux",
+    "coverImage": "Portfolio/oiseaux/oiseau de proie",
+    "order": 2,
+    "featured": true,
+    "photoCount": 0,
+    "subFolders": []
+  },
+  {
+    "slug": "paysages",
+    "title": "Paysages",
+    "titleEn": "Landscapes",
+    "description": "Le territoire québécois dans ses humeurs — forêts boréales, lacs silencieux, premiers gels et lumières de saison.",
+    "cloudinaryFolder": "Portfolio/paysages",
+    "coverImage": "Portfolio/paysages",
+    "order": 3,
+    "featured": true,
+    "photoCount": 0,
+    "subFolders": []
+  }
+]
