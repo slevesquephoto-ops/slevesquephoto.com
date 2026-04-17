@@ -41,7 +41,13 @@ export function Hero({
 
       {/* Contenu */}
       <div className="relative z-10 w-full max-w-[1400px] mx-auto px-5 md:px-10 lg:px-20 pb-16 md:pb-24">
-        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-light text-white leading-[1.05] max-w-2xl">
+        <h1
+          className="font-serif text-5xl md:text-7xl lg:text-8xl font-extralight text-white leading-[1.05] max-w-2xl"
+          style={{
+            fontOpticalSizing: "auto",
+            fontVariantLigatures: "none",
+          }}
+        >
           {title}
         </h1>
 
