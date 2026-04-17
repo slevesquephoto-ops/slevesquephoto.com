@@ -16,7 +16,7 @@ export function Footer() {
           {/* Identité */}
           <div className="flex-shrink-0">
             <p className="font-serif text-xl font-light text-ink">
-              S. Lévesque Photo
+              S. Levesque Photo
             </p>
             <p className="text-sm text-ink-muted mt-1">
               Photographie nature et faune sauvage
@@ -52,7 +52,7 @@ export function Footer() {
               Instagram
             </a>
             <p className="text-xs text-ink-faint">
-              © {new Date().getFullYear()} S. Lévesque
+              © {new Date().getFullYear()} S. Levesque Photo
             </p>
           </div>
 

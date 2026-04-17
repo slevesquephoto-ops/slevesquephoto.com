@@ -1,5 +1,5 @@
 {
-  "intro": "Tous les tirages sont produits sur commande, signés et numérotés. Chaque impression est réalisée avec des encres pigmentaires archivales sur des papiers sélectionnés pour leur rendu et leur longévité.",
+  "intro": "Tous les tirages sont produits sur commande, signés et numérotés. Chaque impression est un projet, j'imprime certain formats moi-même et je fais affaire avec des fournisseurs de confiance sur les plus grands formats ou sur les supports autre que le papier.",
   "formats": [
     { "size": "8x10", "cm": "20x25", "priceCAD": 75 },
     { "size": "11x14", "cm": "28x36", "priceCAD": 120 },
@@ -15,7 +15,7 @@
     {
       "id": "fine-art",
       "name": "Fine Art Mat",
-      "description": "Papier coton 310g, rendu galerie sans reflets. La référence pour une présentation murale haut de gamme."
+      "description": "Papier, rendu galerie, soigneusement sélectionné pour mettre en valeur la photo. La référence pour une présentation murale haut de gamme."
     },
     {
       "id": "metal",
@@ -23,6 +23,6 @@
       "description": "Impression directe sur aluminium brossé, effet flottant. Luminosité exceptionnelle, résistant à l'humidité."
     }
   ],
-  "note": "Délai de production : 5–7 jours ouvrables. Livraison au Canada seulement. Encadrements disponibles sur demande.",
-  "contactEmail": "info@slevesquephoto.com"
+  "note": "Délai de production : 5–7 jours ouvrables. Livraison au Canada seulement. Encadrements disponibles sur demande. Les prix ne sont que des références et seront ajustés à chaque projet.",
+  "contactEmail": "slevesquephoto@gmail.com"
 }

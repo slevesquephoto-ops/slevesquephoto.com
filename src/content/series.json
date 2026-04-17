@@ -21,7 +21,7 @@
       { "slug": "lievre", "label": "Lièvre", "folder": "Portfolio/mammiferes/Lievre" },
       { "slug": "raton", "label": "Raton laveur", "folder": "Portfolio/mammiferes/Raton" },
       { "slug": "rongeur", "label": "Rongeurs", "folder": "Portfolio/mammiferes/Rongeur" },
-      { "slug": "aquatiques", "label": "Aquatiques", "folder": "Portfolio/mammiferes/Aquatiques" }
+      { "slug": "marins", "label": "Marins", "folder": "Portfolio/mammiferes/Marins" }
     ]
   },
   {
