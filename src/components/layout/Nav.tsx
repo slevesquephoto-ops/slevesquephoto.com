@@ -51,32 +51,30 @@ export function Nav() {
         }`}
       >
         <div className="max-w-[1400px] mx-auto h-full px-5 md:px-10 lg:px-20 flex items-center justify-between">
-          <Link href="/" aria-label="S. Lévesque Photographie — Accueil">
-            <div className="relative h-16 w-64">
-              {/* Logo noir — pages standard et après défilement */}
-              <Image
-                src={buildCloudinaryUrl("Logo_noir", { width: 288, quality: "auto:best" })}
-                alt="S. Lévesque Photographie"
-                fill
-                sizes="144px"
-                className={`object-contain object-left transition-opacity duration-300 ${
-                  isTransparent ? "opacity-0" : "opacity-100"
-                }`}
-                priority
-              />
-              {/* Logo blanc — hero avant défilement */}
-              <Image
-                src={buildCloudinaryUrl("Logo_blanc", { width: 288, quality: "auto:best" })}
-                alt=""
-                aria-hidden="true"
-                fill
-                sizes="144px"
-                className={`object-contain object-left transition-opacity duration-300 ${
-                  isTransparent ? "opacity-100" : "opacity-0"
-                }`}
-                priority
-              />
-            </div>
+          <Link href="/" className="relative flex items-center py-3" aria-label="S. Lévesque Photographie — Accueil">
+            {/* Logo noir — pages standard et après défilement */}
+            <Image
+              src={buildCloudinaryUrl("Logo_noir", { width: 480, quality: "auto:best" })}
+              alt="S. Lévesque Photographie"
+              height={40}
+              width={240}
+              className={`h-10 w-auto transition-opacity duration-300 ${
+                isTransparent ? "opacity-0" : "opacity-100"
+              }`}
+              priority
+            />
+            {/* Logo blanc — hero avant défilement (superposé) */}
+            <Image
+              src={buildCloudinaryUrl("Logo_blanc", { width: 480, quality: "auto:best" })}
+              alt=""
+              aria-hidden="true"
+              height={40}
+              width={240}
+              className={`h-10 w-auto transition-opacity duration-300 absolute left-0 ${
+                isTransparent ? "opacity-100" : "opacity-0"
+              }`}
+              priority
+            />
           </Link>
 
           {/* Desktop */}
