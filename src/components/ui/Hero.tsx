@@ -60,9 +60,11 @@ export function Hero({
         {ctaLabel && ctaHref && (
           <Link
             href={ctaHref}
-            className="mt-8 inline-block bg-white text-ink text-xs uppercase tracking-widest px-8 py-3 hover:bg-accent hover:text-white transition-colors duration-300"
+            className="group mt-8 inline-flex items-center gap-3 border border-white text-white text-xs uppercase transition-colors duration-300 hover:bg-white hover:text-ink"
+            style={{ padding: "14px 40px", letterSpacing: "0.15em", fontSize: "0.75rem" }}
           >
             {ctaLabel}
+            <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
           </Link>
         )}
       </div>
