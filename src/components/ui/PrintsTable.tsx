@@ -1,3 +1,4 @@
+import Link from "next/link"
 import type { TiragesContent } from "@/lib/photos"
 
 interface PrintsTableProps {
@@ -65,12 +66,12 @@ export function PrintsTable({ data }: PrintsTableProps) {
         <p className="text-xs text-ink-faint leading-relaxed max-w-lg">
           {data.note}
         </p>
-        <a
-          href={`mailto:${data.contactEmail}`}
+        <Link
+          href="/contact"
           className="inline-block bg-accent text-white text-xs uppercase tracking-widest px-8 py-3 hover:opacity-85 transition-opacity duration-200 flex-shrink-0"
         >
           Commander un tirage
-        </a>
+        </Link>
       </div>
 
     </div>

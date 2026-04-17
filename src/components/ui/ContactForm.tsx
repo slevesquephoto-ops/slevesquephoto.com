@@ -7,6 +7,7 @@ interface FormState {
   email: string
   series: string
   message: string
+  website: string  // honeypot — doit rester vide
 }
 
 const SERIES_OPTIONS = [
@@ -24,6 +25,7 @@ export function ContactForm() {
     email: "",
     series: "",
     message: "",
+    website: "",
   })
   const [status, setStatus] = useState<SubmitStatus>("idle")
 
@@ -49,7 +51,7 @@ export function ContactForm() {
       if (!res.ok) throw new Error("Erreur serveur")
 
       setStatus("success")
-      setForm({ name: "", email: "", series: "", message: "" })
+      setForm({ name: "", email: "", series: "", message: "", website: "" })
     } catch {
       setStatus("error")
     }
@@ -76,6 +78,17 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} noValidate className="max-w-xl">
+      {/* Honeypot anti-spam — invisible pour les humains */}
+      <input
+        name="website"
+        type="text"
+        value={form.website}
+        onChange={handleChange}
+        tabIndex={-1}
+        aria-hidden="true"
+        autoComplete="off"
+        style={{ display: "none" }}
+      />
       <div className="flex flex-col gap-6">
 
         {/* Nom */}

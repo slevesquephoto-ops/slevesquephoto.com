@@ -23,11 +23,17 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     )
   }
 
-  const { name, email, message, series } = body as {
+  const { name, email, message, series, website } = body as {
     name: string
     email: string
     message: string
     series?: string
+    website?: string
+  }
+
+  // Honeypot : un bot remplit ce champ invisible, un humain non
+  if (website) {
+    return NextResponse.json({ success: true })
   }
 
   if (!name.trim() || !email.trim() || !message.trim()) {
@@ -44,7 +50,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
 
   const { error } = await resend.emails.send({
     from: "Site Web <onboarding@resend.dev>",
-    to: "info@slevesquephoto.com",
+    to: "slevesquephoto@gmail.com",
     replyTo: email,
     subject: `Nouveau message de ${name}`,
     text: [

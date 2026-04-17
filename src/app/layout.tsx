@@ -4,6 +4,7 @@ import "./globals.css"
 import { Nav } from "@/components/layout/Nav"
 import { Footer } from "@/components/layout/Footer"
 import { PageTransition } from "@/components/layout/PageTransition"
+import { CopyrightToast } from "@/components/ui/CopyrightToast"
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -41,6 +42,7 @@ export default function RootLayout({
         <Nav />
         <PageTransition>{children}</PageTransition>
         <Footer />
+        <CopyrightToast />
       </body>
     </html>
   )
