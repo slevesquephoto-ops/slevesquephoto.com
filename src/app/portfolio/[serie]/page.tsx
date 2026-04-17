@@ -24,9 +24,9 @@ export async function generateMetadata(
 
   return {
     title: serie.title,
-    description: `${serie.description} — Photographie nature Québec par S. Lévesque.`,
+    description: `${serie.description} — Photographie nature Québec par S. Levesque.`,
     openGraph: {
-      title: `${serie.title} — S. Lévesque Photographie`,
+      title: `${serie.title} — S. Levesque Photographie`,
       description: serie.description,
       images: [{ url: ogImageUrl, width: 1200, height: 630 }],
       type: "website",

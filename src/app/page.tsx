@@ -2,11 +2,11 @@ import type { Metadata } from "next"
 import { getAllSeries } from "@/lib/photos"
 
 export const metadata: Metadata = {
-  title: "S. Lévesque Photographie — Nature et faune sauvage du Québec",
+  title: "S. Levesque Photographie — Nature et faune sauvage du Québec",
   description:
-    "Portfolio de S. Lévesque, photographe nature et faune sauvage au Québec. Mammifères, oiseaux, paysages — tirages d'art signés sur commande.",
+    "Portfolio de S. Levesque, photographe nature et faune sauvage au Québec. Mammifères, oiseaux, paysages — tirages d'art signés sur commande.",
   openGraph: {
-    title: "S. Lévesque Photographie",
+    title: "S. Levesque Photographie",
     description:
       "Photographie nature et faune sauvage au Québec. Mammifères, oiseaux, paysages.",
     images: [{ url: "/og-default.jpg", width: 1200, height: 630 }],
@@ -34,8 +34,8 @@ export default function HomePage() {
   return (
     <main>
       <Hero
-        title="S. Lévesque"
-        subtitle="Photographie nature · Québec"
+        title="La nature sauvage du Québec"
+        subtitle="Chaque image raconte une rencontre authentique avec la faune"
         imageSrc={heroImageUrl}
         imageAlt="Photographie de nature et faune sauvage au Québec"
         imageBlurUrl={heroBlurUrl}

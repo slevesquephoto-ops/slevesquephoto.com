@@ -4,9 +4,9 @@ import { ContactForm } from "@/components/ui/ContactForm"
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contactez S. Lévesque pour une commande de tirage, une collaboration ou toute question. Réponse sous 48 heures.",
+    "Contactez S. Levesque pour une commande de tirage, une collaboration ou toute question. Réponse sous 48 heures.",
   openGraph: {
-    title: "Contact — S. Lévesque Photographie",
+    title: "Contact — S. Levesque Photographie",
     description: "Commande de tirage, collaboration, questions — écrivez-moi.",
     type: "website",
     locale: "fr_CA",

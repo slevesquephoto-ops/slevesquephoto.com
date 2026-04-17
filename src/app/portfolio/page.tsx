@@ -4,9 +4,9 @@ import { getAllSeries } from "@/lib/photos"
 export const metadata: Metadata = {
   title: "Portfolio",
   description:
-    "Explorez le portfolio de S. Lévesque : mammifères sauvages, oiseaux et paysages du Québec. Photographie nature et faune en milieu naturel.",
+    "Explorez le portfolio de S. Levesque : mammifères sauvages, oiseaux et paysages du Québec. Photographie nature et faune en milieu naturel.",
   openGraph: {
-    title: "Portfolio — S. Lévesque Photographie",
+    title: "Portfolio — S. Levesque Photographie",
     description:
       "Mammifères sauvages, oiseaux et paysages du Québec en photographie nature.",
     images: [{ url: "/og-default.jpg", width: 1200, height: 630 }],
@@ -28,11 +28,10 @@ export default function PortfolioPage() {
           Portfolio
         </p>
         <h1 className="font-serif text-5xl md:text-6xl font-light text-ink">
-          Séries photographiques
+          Portfolio
         </h1>
         <p className="mt-4 text-base text-ink-muted max-w-xl leading-relaxed">
-          Mammifères, oiseaux, paysages — le territoire québécois à travers
-          trois regards complémentaires.
+          Toutes mes photos sont prises en milieu naturel, sans appât ni manipulation. Ce que vous voyez, c'est ce qui s'est passé.
         </p>
       </div>
       <SeriesGrid series={series} />

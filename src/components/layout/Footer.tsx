@@ -16,12 +16,12 @@ export function Footer() {
           {/* Identité */}
           <div className="flex-shrink-0">
             <p className="font-serif text-xl font-light text-ink">
-              S. Lévesque
+              S. Lévesque Photo
             </p>
             <p className="text-sm text-ink-muted mt-1">
               Photographie nature et faune sauvage
             </p>
-            <p className="text-xs text-ink-faint mt-1">Québec, Canada</p>
+          <p className="text-xs text-ink-faint mt-1">Rimouski, Québec</p>
           </div>
 
           {/* Navigation */}
@@ -43,7 +43,7 @@ export function Footer() {
           {/* Social + copyright */}
           <div className="flex flex-col gap-3">
             <a
-              href="https://instagram.com/slevesquephoto"
+              href="https://www.instagram.com/steevelevesque_photo/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-xs uppercase tracking-widest text-ink-muted hover:text-ink transition-colors duration-200 self-start"

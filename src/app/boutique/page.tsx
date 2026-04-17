@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export const metadata: Metadata = {
   title: "Boutique",
-  description: "Boutique en ligne de S. Lévesque Photographie — bientôt disponible.",
+  description: "Boutique en ligne de S. Levesque Photographie — bientôt disponible.",
   robots: { index: false, follow: false },
 }
 
