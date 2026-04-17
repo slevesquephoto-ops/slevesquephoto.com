@@ -13,7 +13,7 @@ interface PhotoCardProps {
 export function PhotoCard({ photo, onClick }: PhotoCardProps) {
   const alt = photo.alt || `Photo de la série ${photo.series}`
   const reduceMotion = useReducedMotion()
-  const displayTitle = photo.title ?? photo.subFolder ?? null
+  const displayTitle = photo.title || photo.subFolder || null
 
   return (
     <button
