@@ -44,33 +44,37 @@ export function Nav() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 h-16 z-50 transition-colors duration-300 ${
+        className={`fixed top-0 left-0 right-0 h-16 z-50 overflow-visible transition-colors duration-300 ${
           isTransparent
             ? "bg-transparent"
             : "bg-bg/90 backdrop-blur-sm border-b border-border"
         }`}
       >
-        <div className="max-w-[1400px] mx-auto h-full px-5 md:px-10 lg:px-20 flex items-center justify-between">
-          <Link href="/" className="relative flex items-center py-3" aria-label="S. Lévesque Photographie — Accueil">
-            {/* Logo noir — pages standard et après défilement */}
+        <div className="max-w-[1400px] mx-auto h-full px-5 md:px-10 lg:px-20 flex items-center justify-between overflow-visible">
+          <Link
+            href="/"
+            className="relative flex items-center"
+            aria-label="S. Lévesque Photographie — Accueil"
+          >
+            {/* Logo noir — largeur calculée depuis ratio 1817/771 */}
             <Image
-              src={buildCloudinaryUrl("Logo_noir", { width: 480, quality: "auto:best" })}
+              src={buildCloudinaryUrl("Logo_noir", { width: 452, quality: "auto:best" })}
               alt="S. Lévesque Photographie"
-              height={40}
-              width={240}
-              className={`h-10 w-auto transition-opacity duration-300 ${
+              height={48}
+              width={113}
+              className={`h-12 w-auto transition-opacity duration-300 ${
                 isTransparent ? "opacity-0" : "opacity-100"
               }`}
               priority
             />
-            {/* Logo blanc — hero avant défilement (superposé) */}
+            {/* Logo blanc — largeur calculée depuis ratio 2550/1105, superposé */}
             <Image
-              src={buildCloudinaryUrl("Logo_blanc", { width: 480, quality: "auto:best" })}
+              src={buildCloudinaryUrl("Logo_blanc", { width: 444, quality: "auto:best" })}
               alt=""
               aria-hidden="true"
-              height={40}
-              width={240}
-              className={`h-10 w-auto transition-opacity duration-300 absolute left-0 ${
+              height={48}
+              width={111}
+              className={`h-12 w-auto transition-opacity duration-300 absolute left-0 ${
                 isTransparent ? "opacity-100" : "opacity-0"
               }`}
               priority
