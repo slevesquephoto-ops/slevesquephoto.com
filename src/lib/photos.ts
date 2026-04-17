@@ -65,13 +65,25 @@ export async function getPhotosBySerie(
 ): Promise<CloudinaryPhoto[]> {
   const serie = getSerieBySlug(slug)
   if (!serie) return []
+
+  // Série avec sous-dossiers (ex: mammifères) : fetch parallèle de chaque sous-dossier
+  // pour que chaque photo soit correctement taguée avec son subFolder
+  if (serie.subFolders.length > 0) {
+    const results = await Promise.all(
+      serie.subFolders.map((sf) =>
+        getPhotosByFolder(sf.folder, sf.folder.split("/").pop())
+      )
+    )
+    return results.flat()
+  }
+
   return getPhotosByFolder(serie.cloudinaryFolder)
 }
 
 export async function getPhotosBySubFolder(
   subFolder: SubFolder
 ): Promise<CloudinaryPhoto[]> {
-  return getPhotosByFolder(subFolder.folder)
+  return getPhotosByFolder(subFolder.folder, subFolder.folder.split("/").pop())
 }
 
 // ─── Contenu À propos ─────────────────────────────────────────────────────────

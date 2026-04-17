@@ -1,4 +1,10 @@
+/**
+ * Opérations Cloudinary SDK — server-side uniquement.
+ * Ne jamais importer ce fichier dans un composant "use client".
+ */
 import { v2 as cloudinary } from "cloudinary"
+import { buildCloudinaryUrl, buildBlurUrl } from "./cloudinary-url"
+import type { CloudinaryPhoto } from "./cloudinary-url"
 
 cloudinary.config({
   cloud_name: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
@@ -7,63 +13,17 @@ cloudinary.config({
   secure: true,
 })
 
-// ─── Types ────────────────────────────────────────────────────────────────────
-
-export interface CloudinaryPhoto {
-  publicId: string
-  url: string
-  blurUrl: string
-  width: number
-  height: number
-  alt: string
-  series: string
-  slug: string
-  subFolder?: string
-}
-
-export interface CloudinaryTransforms {
-  width?: number
-  height?: number
-  quality?: "auto" | "auto:good" | "auto:best" | "auto:eco"
-  format?: "auto" | "webp" | "avif"
-  crop?: "fill" | "fit" | "scale" | "crop"
-}
-
-// ─── Construction d'URLs ──────────────────────────────────────────────────────
-
-export function buildCloudinaryUrl(
-  publicId: string,
-  transforms: CloudinaryTransforms = {}
-): string {
-  return cloudinary.url(publicId, {
-    fetch_format: transforms.format ?? "auto",
-    quality: transforms.quality ?? "auto:good",
-    ...(transforms.width && { width: transforms.width }),
-    ...(transforms.height && { height: transforms.height }),
-    crop: transforms.crop ?? "fill",
-    secure: true,
-  })
-}
-
-export function buildBlurUrl(publicId: string): string {
-  return cloudinary.url(publicId, {
-    width: 20,
-    effect: "blur:200",
-    fetch_format: "auto",
-    quality: "auto:eco",
-    secure: true,
-  })
-}
+export type { CloudinaryPhoto }
+export { buildCloudinaryUrl, buildBlurUrl }
 
 // ─── Fetch des assets (Server Side uniquement) ────────────────────────────────
 
 export async function getPhotosByFolder(
-  folder: string
+  folder: string,
+  subFolderLabel?: string
 ): Promise<CloudinaryPhoto[]> {
-  const result = await cloudinary.api.resources({
-    type: "upload",
-    prefix: folder,
-    max_results: 100,
+  const result = await cloudinary.api.resources_by_asset_folder(folder, {
+    max_results: 500,
     context: true,
   })
 
@@ -72,12 +32,15 @@ export async function getPhotosByFolder(
       public_id: string
       width: number
       height: number
+      asset_folder?: string
       context?: { custom?: { alt?: string } }
     }) => {
-      const parts = r.public_id.split("/")
-      // Le sous-dossier est la partie entre le dossier parent et le fichier
-      const subFolder =
-        parts.length > 2 ? parts[parts.length - 2] : undefined
+      // subFolder : soit passé explicitement, soit déduit depuis asset_folder
+      const assetFolder = r.asset_folder ?? folder
+      const resolvedSubFolder =
+        subFolderLabel ?? (assetFolder !== folder
+          ? assetFolder.split("/").pop()
+          : undefined)
 
       return {
         publicId: r.public_id,
@@ -87,8 +50,8 @@ export async function getPhotosByFolder(
         height: r.height,
         alt: r.context?.custom?.alt ?? "",
         series: folder.split("/").pop() ?? "",
-        slug: parts[parts.length - 1] ?? "",
-        subFolder,
+        slug: r.public_id,
+        subFolder: resolvedSubFolder,
       }
     }
   )

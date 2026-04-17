@@ -3,7 +3,7 @@ title: "À propos"
 subtitle: "Photographe nature et faune sauvage"
 location: "Québec, Canada"
 since: 2015
-portrait: "My Brand/portrait"
+portrait: "slevesquephoto_perso"
 ---
 
 La photographie de nature est pour moi une façon d'être présent — vraiment présent — dans le monde sauvage qui nous entoure. Chaque sortie est une leçon d'humilité : la lumière change, les animaux décident, et l'image n'appartient à personne avant d'exister.
