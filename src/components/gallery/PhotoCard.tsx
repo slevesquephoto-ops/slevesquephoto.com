@@ -13,7 +13,7 @@ interface PhotoCardProps {
 export function PhotoCard({ photo, onClick }: PhotoCardProps) {
   const alt = photo.alt || `Photo de la série ${photo.series}`
   const reduceMotion = useReducedMotion()
-  const displayTitle = photo.title || photo.subFolder || null
+  const displayTitle = photo.caption || photo.subFolder || null
 
   return (
     <button
@@ -50,9 +50,9 @@ export function PhotoCard({ photo, onClick }: PhotoCardProps) {
             <p className="text-white text-sm font-medium leading-snug">
               {displayTitle}
             </p>
-            {photo.caption && (
+            {photo.title && (
               <p className="text-white/70 text-xs mt-1 leading-snug">
-                {photo.caption}
+                {photo.title}
               </p>
             )}
           </div>
