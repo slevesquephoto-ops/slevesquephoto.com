@@ -20,7 +20,7 @@ export function Nav() {
   const pathname = usePathname()
   const reduceMotion = useReducedMotion()
 
-  const isHeroPage = pathname === "/" || pathname.startsWith("/portfolio")
+  const isHeroPage = pathname === "/"
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60)
@@ -52,7 +52,7 @@ export function Nav() {
       >
         <div className="max-w-[1400px] mx-auto h-full px-5 md:px-10 lg:px-20 flex items-center justify-between">
           <Link href="/" aria-label="S. Lévesque Photographie — Accueil">
-            <div className="relative h-12 w-52">
+            <div className="relative h-16 w-64">
               {/* Logo noir — pages standard et après défilement */}
               <Image
                 src={buildCloudinaryUrl("Logo_noir", { width: 288, quality: "auto:best" })}
