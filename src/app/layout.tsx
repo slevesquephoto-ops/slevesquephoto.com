@@ -1,15 +1,15 @@
 import type { Metadata } from "next"
-import { Cormorant_Garamond, Inter } from "next/font/google"
+import { Playfair_Display, Inter } from "next/font/google"
 import "./globals.css"
 import { Nav } from "@/components/layout/Nav"
 import { Footer } from "@/components/layout/Footer"
 import { PageTransition } from "@/components/layout/PageTransition"
 
-const cormorant = Cormorant_Garamond({
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
+  weight: ["400", "500"],
   style: ["normal", "italic"],
-  variable: "--font-cormorant",
+  variable: "--font-playfair",
   display: "swap",
 })
 
@@ -22,8 +22,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | S. Lévesque Photographie",
-    default: "S. Lévesque Photographie — Nature et faune sauvage du Québec",
+    template: "%s | S. Levesque Photographie",
+    default: "S. Levesque Photographie — Nature et faune sauvage du Québec",
   },
   description:
     "Portfolio et tirages de S. Lévesque, photographe nature et faune sauvage au Québec. Mammifères, oiseaux, paysages.",
@@ -36,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="fr" className={`${cormorant.variable} ${inter.variable}`}>
+    <html lang="fr" className={`${playfair.variable} ${inter.variable}`}>
       <body className="min-h-dvh flex flex-col bg-bg text-ink font-sans antialiased">
         <Nav />
         <PageTransition>{children}</PageTransition>
