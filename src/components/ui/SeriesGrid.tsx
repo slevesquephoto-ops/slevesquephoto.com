@@ -25,7 +25,9 @@ interface SeriesCardProps {
 
 function SeriesCard({ serie }: SeriesCardProps) {
   const imageUrl = buildCloudinaryUrl(serie.coverImage, {
-    width: 800,
+    width: 900,
+    height: 675,
+    crop: "fill",
     quality: "auto:good",
   })
   const blurUrl = buildBlurUrl(serie.coverImage)
@@ -37,7 +39,7 @@ function SeriesCard({ serie }: SeriesCardProps) {
       aria-label={`Voir la série ${serie.title}`}
     >
       {/* Image */}
-      <div className="relative aspect-[3/4] overflow-hidden">
+      <div className="relative aspect-[4/3] overflow-hidden">
         <Image
           src={imageUrl}
           alt={`Aperçu de la série ${serie.title}`}

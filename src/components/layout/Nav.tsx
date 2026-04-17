@@ -1,9 +1,11 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion"
+import { buildCloudinaryUrl } from "@/lib/cloudinary-url"
 
 const NAV_LINKS = [
   { href: "/portfolio", label: "Portfolio" },
@@ -49,11 +51,32 @@ export function Nav() {
         }`}
       >
         <div className="max-w-[1400px] mx-auto h-full px-5 md:px-10 lg:px-20 flex items-center justify-between">
-          <Link
-            href="/"
-            className="font-serif text-xl font-light tracking-wide text-ink"
-          >
-            S. Lévesque
+          <Link href="/" aria-label="S. Lévesque Photographie — Accueil">
+            <div className="relative h-12 w-52">
+              {/* Logo noir — pages standard et après défilement */}
+              <Image
+                src={buildCloudinaryUrl("Logo_noir", { width: 288, quality: "auto:best" })}
+                alt="S. Lévesque Photographie"
+                fill
+                sizes="144px"
+                className={`object-contain object-left transition-opacity duration-300 ${
+                  isTransparent ? "opacity-0" : "opacity-100"
+                }`}
+                priority
+              />
+              {/* Logo blanc — hero avant défilement */}
+              <Image
+                src={buildCloudinaryUrl("Logo_blanc", { width: 288, quality: "auto:best" })}
+                alt=""
+                aria-hidden="true"
+                fill
+                sizes="144px"
+                className={`object-contain object-left transition-opacity duration-300 ${
+                  isTransparent ? "opacity-100" : "opacity-0"
+                }`}
+                priority
+              />
+            </div>
           </Link>
 
           {/* Desktop */}
