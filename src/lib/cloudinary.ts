@@ -33,7 +33,7 @@ export async function getPhotosByFolder(
       width: number
       height: number
       asset_folder?: string
-      context?: { custom?: { alt?: string } }
+      context?: { custom?: { alt?: string; title?: string; caption?: string } }
     }) => {
       // subFolder : soit passé explicitement, soit déduit depuis asset_folder
       const assetFolder = r.asset_folder ?? folder
@@ -48,7 +48,9 @@ export async function getPhotosByFolder(
         blurUrl: buildBlurUrl(r.public_id),
         width: r.width,
         height: r.height,
-        alt: r.context?.custom?.alt ?? "",
+        alt:     r.context?.custom?.alt ?? "",
+        title:   r.context?.custom?.title,
+        caption: r.context?.custom?.caption,
         series: folder.split("/").pop() ?? "",
         slug: r.public_id,
         subFolder: resolvedSubFolder,
