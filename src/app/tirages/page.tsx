@@ -4,7 +4,7 @@ import { getTiragesContent } from "@/lib/photos"
 export const metadata: Metadata = {
   title: "Impressions",
   description:
-    "Tirages photographiques signés et numérotés sur commande. Formats 8×10 à 20×30 po, papiers Lustre, Fine Art Mat ou Métal. Photographie nature Québec.",
+    "Tirages photographiques signés et numérotés sur commande. Formats 8×10 à 20×30 po, papiers Acrylique, Papier Fine Art ou Alupanel. Photographie nature Québec.",
   openGraph: {
     title: "Tirages d'art — S. Levesque Photographie",
     description:

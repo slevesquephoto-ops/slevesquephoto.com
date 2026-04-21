@@ -159,7 +159,7 @@ export function AnimatedComponent() {
 
 ### Footer — structure minimale
 - Liens de navigation principaux
-- Réseaux sociaux (Instagram prioritaire pour un photographe)
+- Réseaux sociaux (Instagram prioritaire pour un photographe et Facebook)
 - Copyright avec année dynamique : `new Date().getFullYear()`
 - Fond `bg-surface`, pas `bg-bg`
 

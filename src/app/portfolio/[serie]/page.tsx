@@ -8,33 +8,61 @@ interface SeriePageProps {
   params: Promise<{ serie: string }>
 }
 
-export async function generateMetadata(
-  { params }: SeriePageProps
-): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ serie: string }>
+  searchParams: Promise<{ photo?: string }>
+}): Promise<Metadata> {
   const { serie: slug } = await params
+  const { photo: photoSlug } = await searchParams
   const serie = getSerieBySlug(slug)
   if (!serie) return {}
 
-  const ogImageUrl = buildCloudinaryUrl(serie.coverImage, {
+  const coverOgUrl = buildCloudinaryUrl(serie.coverImage, {
     width: 1200,
     height: 630,
     quality: "auto:good",
     crop: "fill",
   })
 
+  let title = serie.title
+  let description = `${serie.description} — Photographie nature Québec par S. Levesque.`
+  let ogImage: { url: string; width: number; height: number } = { url: coverOgUrl, width: 1200, height: 630 }
+  let canonical = `https://slevesquephoto.com/portfolio/${slug}`
+
+  if (photoSlug) {
+    const photos = await getPhotosBySerie(slug)
+    const photo = photos.find((p) => p.slug === photoSlug)
+    if (photo) {
+      const photoTitle = photo.title || photo.alt || serie.title
+      const photoOgUrl = buildCloudinaryUrl(photo.publicId, {
+        width: 1200,
+        height: 630,
+        quality: "auto:good",
+        crop: "fill",
+      })
+      title = photoTitle
+      description = `${photoTitle} — ${serie.description}`
+      ogImage = { url: photoOgUrl, width: 1200, height: 630 }
+      canonical = `https://slevesquephoto.com/portfolio/${slug}?photo=${encodeURIComponent(photoSlug)}`
+    }
+  }
+
   return {
-    title: serie.title,
-    description: `${serie.description} — Photographie nature Québec par S. Levesque.`,
+    title,
+    description,
     openGraph: {
-      title: `${serie.title} — S. Levesque Photographie`,
-      description: serie.description,
-      images: [{ url: ogImageUrl, width: 1200, height: 630 }],
+      title: `${title} — S. Levesque Photographie`,
+      description,
+      images: [ogImage],
       type: "website",
       locale: "fr_CA",
     },
     twitter: { card: "summary_large_image" },
     alternates: {
-      canonical: `https://slevesquephoto.com/portfolio/${slug}`,
+      canonical,
     },
   }
 }

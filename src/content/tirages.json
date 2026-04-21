@@ -1,5 +1,5 @@
 {
-  "intro": "Tous les tirages sont produits sur commande, signés et numérotés. Chaque impression est un projet, j'imprime certain formats moi-même et je fais affaire avec des fournisseurs de confiance sur les plus grands formats ou sur les supports autre que le papier.",
+  "intro": "Chaque tirage est un projet à part entière. On discute ensemble du format, du support et de l'intention derrière l'image — pour que le résultat final soit exactement ce que tu imagines sur ton mur. J'imprime certains formats moi-même, et je travaille avec des fournisseurs de confiance pour les grands formats et les supports spéciaux.",
   "formats": [
     { "size": "8x10", "cm": "20x25", "priceCAD": 75 },
     { "size": "11x14", "cm": "28x36", "priceCAD": 120 },
@@ -9,20 +9,20 @@
   "papers": [
     {
       "id": "lustre",
-      "name": "Lustre",
+      "name": "Acrylique",
       "description": "Finition semi-brillante, couleurs vives et profondeur dans les noirs. Idéal pour la faune et les détails fins."
     },
     {
       "id": "fine-art",
-      "name": "Fine Art Mat",
-      "description": "Papier, rendu galerie, soigneusement sélectionné pour mettre en valeur la photo. La référence pour une présentation murale haut de gamme."
+      "name": "Fine Art",
+      "description": "Papier photo haut de gamme soigneusement sélectionné pour ceux qui veulent quelque chose qui dure.."
     },
     {
       "id": "metal",
-      "name": "Métal",
-      "description": "Impression directe sur aluminium brossé, effet flottant. Luminosité exceptionnelle, résistant à l'humidité."
+      "name": "Alupanel",
+      "description": "Impression directe sur aluminium brossé. Pas de cadre, pas de vitre — la photo flotte sur le mur avec une luminosité qu'aucun autre support n'égale."
     }
   ],
-  "note": "Délai de production : 5–7 jours ouvrables. Livraison au Canada seulement. Encadrements disponibles sur demande. Les prix ne sont que des références et seront ajustés à chaque projet.",
+  "note": "Délai habituel : 5 à 7 jours ouvrables selon le format et le support. Livraison au Canada. Encadrements disponibles sur demande.",
   "contactEmail": "slevesquephoto@gmail.com"
 }

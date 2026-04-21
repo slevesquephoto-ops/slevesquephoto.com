@@ -70,7 +70,7 @@ export function PrintsTable({ data }: PrintsTableProps) {
           href="/contact"
           className="inline-block bg-accent text-white text-xs uppercase tracking-widest px-8 py-3 hover:opacity-85 transition-opacity duration-200 flex-shrink-0"
         >
-          Commander un tirage
+          DÉMARRER UN PROJET
         </Link>
       </div>
 

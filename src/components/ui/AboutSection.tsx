@@ -9,28 +9,14 @@ interface AboutSectionProps {
 
 export function AboutSection({ content }: AboutSectionProps) {
   const portraitUrl = buildCloudinaryUrl(content.portrait, {
-    width: 600,
+    width: 800,
     quality: "auto:good",
-    crop: "fill",
   })
   const portraitBlurUrl = buildBlurUrl(content.portrait)
 
   return (
     <article className="max-w-[1400px] mx-auto px-5 md:px-10 lg:px-20 py-20 md:py-28">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
-
-        {/* Portrait */}
-        <div className="relative aspect-[3/4] md:aspect-auto md:h-[600px]">
-          <Image
-            src={portraitUrl}
-            alt="Portrait de S. Lévesque, photographe"
-            fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover"
-            placeholder="blur"
-            blurDataURL={portraitBlurUrl}
-          />
-        </div>
 
         {/* Texte */}
         <div className="flex flex-col justify-center">
@@ -57,6 +43,20 @@ export function AboutSection({ content }: AboutSectionProps) {
               {content.body}
             </ReactMarkdown>
           </div>
+        </div>
+
+        {/* Portrait */}
+        <div className="relative w-full">
+          <Image
+            src={portraitUrl}
+            alt="Portrait de S. Lévesque, photographe"
+            width={800}
+            height={1067}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="w-full h-auto"
+            placeholder="blur"
+            blurDataURL={portraitBlurUrl}
+          />
         </div>
 
       </div>

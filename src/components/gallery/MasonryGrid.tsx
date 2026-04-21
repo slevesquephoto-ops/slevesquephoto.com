@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useMemo } from "react"
+import { useState, useMemo, useEffect } from "react"
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion"
 import { PhotoCard } from "./PhotoCard"
 import { Lightbox } from "./Lightbox"
@@ -26,6 +26,15 @@ export function MasonryGrid({ photos, subFolders = [] }: MasonryGridProps) {
   const [activeFilter, setActiveFilter] = useState<string | null>(null)
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
   const reduceMotion = useReducedMotion()
+
+  // Ouvrir le lightbox sur la photo indiquée par ?photo= dans l'URL
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const photoSlug = params.get("photo")
+    if (!photoSlug) return
+    const index = photos.findIndex((p) => p.slug === photoSlug)
+    if (index !== -1) setLightboxIndex(index)
+  }, [photos])
 
   // Filtre les photos selon le sous-dossier actif
   const filteredPhotos = useMemo(() => {

@@ -34,6 +34,7 @@ export function PhotoCard({ photo, onClick }: PhotoCardProps) {
           className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
           placeholder="blur"
           blurDataURL={photo.blurUrl}
+          onDragStart={(e) => e.preventDefault()}
         />
 
         {/* Overlay hover — dégradé + titre + caption optionnelle */}

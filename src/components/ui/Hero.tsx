@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 
@@ -30,6 +32,7 @@ export function Hero({
         sizes="100vw"
         className="object-cover"
         priority
+        onDragStart={(e) => e.preventDefault()}
         {...(imageBlurUrl && {
           placeholder: "blur",
           blurDataURL: imageBlurUrl,

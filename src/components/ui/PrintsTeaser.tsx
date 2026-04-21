@@ -14,7 +14,7 @@ export function PrintsTeaser() {
           <p className="mt-6 text-base text-ink-muted leading-relaxed">
             Tirages signés et numérotés, produits sur commande sur des papiers
             sélectionnés pour leur rendu et leur longévité. Formats de 8×10 à
-            20×30 pouces, en Lustre, Fine Art Mat ou Métal.
+            20×30 pouces, sur Acrylique, Papier Fine Art ou Alupanel.
           </p>
           <Link
             href="/tirages"
