@@ -1,5 +1,6 @@
 "use client"
 
+import React from "react"
 import Image from "next/image"
 import { useReducedMotion } from "framer-motion"
 import type { CloudinaryPhoto } from "@/lib/cloudinary-url"
@@ -25,16 +26,19 @@ export function PhotoCard({ photo, onClick }: PhotoCardProps) {
       <div
         className="relative w-full overflow-hidden"
         style={{ paddingBottom: `${(photo.height / photo.width) * 100}%` }}
+        onContextMenu={(e) => e.preventDefault()}
+        onTouchStart={(e) => e.preventDefault()}
       >
         <Image
           src={photo.url}
           alt={alt}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+          className="object-cover transition-transform duration-500 group-hover:scale-[1.02] select-none pointer-events-none"
           placeholder="blur"
           blurDataURL={photo.blurUrl}
           onDragStart={(e) => e.preventDefault()}
+          style={{ WebkitTouchCallout: "none" } as React.CSSProperties}
         />
 
         {/* Overlay hover — dégradé + titre + caption optionnelle */}

@@ -74,6 +74,7 @@ export function MasonryGrid({ photos, subFolders = [] }: MasonryGridProps) {
         initial={reduceMotion ? false : "hidden"}
         animate="visible"
         className="columns-1 sm:columns-2 lg:columns-3 gap-4"
+        onContextMenu={(e) => e.preventDefault()}
       >
         {filteredPhotos.map((photo, i) => (
           <motion.div

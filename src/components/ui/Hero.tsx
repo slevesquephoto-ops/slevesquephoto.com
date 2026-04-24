@@ -1,5 +1,6 @@
 "use client"
 
+import React from "react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -23,16 +24,21 @@ export function Hero({
   ctaHref,
 }: HeroProps) {
   return (
-    <section className="relative h-screen min-h-[600px] flex items-end">
+    <section
+      className="relative h-screen min-h-[600px] flex items-end"
+      onContextMenu={(e) => e.preventDefault()}
+      onTouchStart={(e) => e.preventDefault()}
+    >
       {/* Image plein écran */}
       <Image
         src={imageSrc}
         alt={imageAlt}
         fill
         sizes="100vw"
-        className="object-cover"
+        className="object-cover select-none pointer-events-none"
         priority
         onDragStart={(e) => e.preventDefault()}
+        style={{ WebkitTouchCallout: "none" } as React.CSSProperties}
         {...(imageBlurUrl && {
           placeholder: "blur",
           blurDataURL: imageBlurUrl,

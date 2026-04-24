@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useState, useCallback } from "react"
+import React, { useEffect, useRef, useState, useCallback } from "react"
 import Image from "next/image"
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion"
 import { buildCloudinaryUrl } from "@/lib/cloudinary-url"
@@ -145,15 +145,18 @@ export function Lightbox({ photos, initialIndex, onClose }: LightboxProps) {
           transition={{ duration: 0.2 }}
           className="relative z-10 max-w-[90vw] max-h-[85vh] flex items-center justify-center"
           onClick={(e) => e.stopPropagation()}
+          onContextMenu={(e) => e.preventDefault()}
+          onTouchStart={(e) => e.preventDefault()}
         >
           <Image
             src={imageUrl}
             alt={alt}
             width={photo.width}
             height={photo.height}
-            className="max-w-[90vw] max-h-[85vh] w-auto h-auto object-contain"
+            className="max-w-[90vw] max-h-[85vh] w-auto h-auto object-contain select-none pointer-events-none"
             priority
             onDragStart={(e) => e.preventDefault()}
+            style={{ WebkitTouchCallout: "none" } as React.CSSProperties}
           />
         </motion.div>
       </AnimatePresence>
