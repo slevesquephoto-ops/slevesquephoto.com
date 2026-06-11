@@ -18,6 +18,7 @@
       { "slug": "martre", "label": "Martre", "folder": "Portfolio/mammiferes/martre" },
       { "slug": "chevreuil", "label": "Chevreuil", "folder": "Portfolio/mammiferes/Chevreuil" },
       { "slug": "hermines", "label": "Hermines", "folder": "Portfolio/mammiferes/Hermines" },
+      { "slug": "lynx", "label": "Lynx", "folder": "Portfolio/mammiferes/Lynx" },
       { "slug": "lievre", "label": "Lièvre", "folder": "Portfolio/mammiferes/Lievre" },
       { "slug": "raton", "label": "Raton laveur", "folder": "Portfolio/mammiferes/Raton" },
       { "slug": "rongeur", "label": "Rongeurs", "folder": "Portfolio/mammiferes/Rongeur" },
