@@ -25,18 +25,12 @@ export function PrintsTable({ data }: PrintsTableProps) {
             {data.formats.map((format) => (
               <div
                 key={format.size}
-                className="flex items-center justify-between py-5 border-b border-border"
+                className="flex items-center py-5 border-b border-border"
               >
-                <div>
-                  <p className="text-sm font-medium text-ink">
-                    {format.size}&Prime;
-                  </p>
-                  <p className="text-xs text-ink-muted mt-0.5">{format.cm} cm</p>
-                </div>
-                <p className="text-sm text-ink font-medium">
-                  {format.priceCAD} $
-                  <span className="text-xs text-ink-faint ml-1">CAD</span>
+                <p className="text-sm font-medium text-ink w-24">
+                  {format.size}&Prime;
                 </p>
+                <p className="text-xs text-ink-muted">{format.cm} cm</p>
               </div>
             ))}
           </div>

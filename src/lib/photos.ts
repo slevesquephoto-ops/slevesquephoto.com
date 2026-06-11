@@ -114,7 +114,6 @@ export interface TiragePaper {
 export interface TirageFormat {
   size: string
   cm: string
-  priceCAD: number
 }
 
 export interface TiragesContent {

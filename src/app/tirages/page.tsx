@@ -4,11 +4,11 @@ import { getTiragesContent } from "@/lib/photos"
 export const metadata: Metadata = {
   title: "Impressions",
   description:
-    "Tirages photographiques signés et numérotés sur commande. Formats 8×10 à 20×30 po, papiers Acrylique, Papier Fine Art ou Alupanel. Photographie nature Québec.",
+    "Tirages photographiques sur commande. Formats 8×10 à 24×36 po, papiers Acrylique, Fine Art ou Alupanel. Écrivez-moi pour discuter de votre projet.",
   openGraph: {
     title: "Tirages d'art — S. Levesque Photographie",
     description:
-      "Tirages signés et numérotés, formats 8×10 à 20×30 po. Livraison au Canada.",
+      "Tirages sur commande, formats 8×10 à 24×36 po. Contactez-moi pour discuter de votre projet.",
     images: [{ url: "/og-default.jpg", width: 1200, height: 630 }],
     type: "website",
     locale: "fr_CA",
